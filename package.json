@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/criveraj/tenderfood.git"
+    "url": "git+https://github.com/jayymorales/tenderfood.git"
   },
   "bugs": {
-    "url": "https://github.com/criveraj/tenderfood/issues"
+    "url": "https://github.com/jaymorales/tenderfood/issues"
   },
-  "homepage": "https://github.com/criveraj/tenderfood#readme"
+  "homepage": "https://github.com/jaymorales/tenderfood#readme"
 }

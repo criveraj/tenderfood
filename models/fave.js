@@ -7,11 +7,6 @@ module.exports = function(sequelize, DataTypes) {
     phone: DataTypes.STRING,
     price: DataTypes.STRING
     });
-    // img: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false,
-    //   len: [1]
-    // }
 
   Fave.associate = function(models) {
     // We're saying that a Post should belong to an Author

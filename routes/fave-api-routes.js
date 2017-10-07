@@ -13,7 +13,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the Faves
-  app.get("/api/Faves", function(req, res) {
+  app.get("/api/faves", function(req, res) {
     var query = {};
     if (req.query.User_id) {
       query.UserId = req.query.User_id;
@@ -26,7 +26,7 @@ module.exports = function(app) {
   });
 
   // Get rotue for retrieving a single Fave
-  app.get("/api/Faves/:id", function(req, res) {
+  app.get("/api/faves/:id", function(req, res) {
     db.Fave.findOne({
       where: {
         id: req.params.id
@@ -38,14 +38,14 @@ module.exports = function(app) {
   });
 
   // Fave route for saving a new Fave
-  app.Fave("/api/Faves", function(req, res) {
+  app.post("/api/faves", function(req, res) {
     db.Fave.create(req.body).then(function(dbFave) {
       res.json(dbFave);
     });
   });
 
   // DELETE route for deleting Faves
-  app.delete("/api/Faves/:id", function(req, res) {
+  app.delete("/api/faves/:id", function(req, res) {
     db.Fave.destroy({
       where: {
         id: req.params.id
@@ -56,7 +56,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating Faves
-  app.put("/api/Faves", function(req, res) {
+  app.put("/api/faves", function(req, res) {
     db.Fave.update(
       req.body,
       {

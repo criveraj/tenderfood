@@ -6,9 +6,9 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var passport   = require('passport');
-var session    = require('express-session');
-var bodyParser = require('body-parser');
+var passport = require('passport');
+var session = require('express-session');
+
 
 // Sets up the Express App
 // =============================================================

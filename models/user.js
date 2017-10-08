@@ -1,3 +1,5 @@
+// Creates users table in SQL with fave association//
+
 module.exports = function(sequelize, DataTypes) {
   var Users = sequelize.define("Users", {
     // Giving the Author model a name of type STRING

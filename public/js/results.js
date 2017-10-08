@@ -1,9 +1,12 @@
 // Variable for Yelp API
 var choiceSelector = "restaurants";
 var numValue = 0;
+var yelpData = [];
+var likedSpots = [];
 // var location = "500 E Peltason Dr, Irvine, CA 92617";
 
-$(document).on("click", "button.Like", Like);
+$(document).on("click", "button.like", Like);
+$(document).on("click", "button.dislike", Dislike);
 
 // Yelp APi & Node.js
 $(document).ready(function() {
@@ -14,7 +17,7 @@ $(document).ready(function() {
 		method: "GET"
 	}).done(function(response) {
 		var yelpResults = response.jsonBody.businesses;
-		console.log(yelpResults);
+		console.log(yelpResults[numValue]);
 
 			var distanceMiles = Math.round((yelpResults[numValue].distance * 0.000621371192)*100)/100;
 			console.log(yelpResults[numValue].location);
@@ -27,13 +30,34 @@ $(document).ready(function() {
 	});
 });
 
-function Like() {
+function Dislike() {
 	numValue++;
-	var yelpData =  "<div class='image-resize-div'><img class='thumbnail image-resize' src='" + yelpResults[numValue].image_url + "' width='300'></div><h5><b>" + yelpResults[numValue].name + "</b></h5><p><b>Price:</b> " + yelpResults[numValue].price + "<br/><b>Rating:</b> " + yelpResults[numValue].rating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + yelpResults[numValue].display_phone +"</p><a href='" + yelpResults[numValue].url + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
-	// + yelpResults[i].display_phone + "</td><td>" + yelpResults[i].location.display_address + "</td><td>" + distanceMiles +"</td>";
-	// yelpDiv.append(yelpData);
-	$(".results").append(yelpData);
+	var queryURL = 	"https://pure-savannah-62932.herokuapp.com/yelp/?q=" + choiceSelector + "&location=" + "500 E Peltason Dr, Irvine, CA 92617" + "&radius=5mi&open_now=true";
+
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).done(function(response) {
+		var yelpResults = response.jsonBody.businesses;
+		console.log(yelpResults[numValue]);
+
+			var distanceMiles = Math.round((yelpResults[numValue].distance * 0.000621371192)*100)/100;
+			console.log(yelpResults[numValue].location);
+			// var yelpDiv = $("<div class='items'>");
+			var yelpData =  "<div class='image-resize-div'><img class='thumbnail image-resize' src='" + yelpResults[numValue].image_url + "' width='300'></div><h5><b>" + yelpResults[numValue].name + "</b></h5><p><b>Price:</b> " + yelpResults[numValue].price + "<br/><b>Rating:</b> " + yelpResults[numValue].rating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + yelpResults[numValue].display_phone +"</p><a href='" + yelpResults[numValue].url + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
+			// + yelpResults[i].display_phone + "</td><td>" + yelpResults[i].location.display_address + "</td><td>" + distanceMiles +"</td>";
+			// yelpDiv.append(yelpData);
+			$(".results").html(yelpData);
+		});
+};
+
+function Like() {
+	likedSpots.push(yelpData);
+	console.log(likedSpots);
+	Dislike();
 }
+
+
 //
 // // Google Map
 // function initMap() {

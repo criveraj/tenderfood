@@ -1,3 +1,5 @@
+// Creates favorites table in SQL with user association//
+
 module.exports = function(sequelize, DataTypes) {
   var Fave = sequelize.define("Fave", {
     img: DataTypes.STRING,

@@ -22,10 +22,12 @@ $(document).ready(function() {
 			var distanceMiles = Math.round((yelpResults[numValue].distance * 0.000621371192)*100)/100;
 			console.log(yelpResults[numValue].location);
 			// var yelpDiv = $("<div class='items'>");
-			var yelpData =  "<div class='image-resize-div'><img class='thumbnail image-resize' src='" + yelpResults[numValue].image_url + "' width='300'></div><h5><b>" + yelpResults[numValue].name + "</b></h5><p><b>Price:</b> " + yelpResults[numValue].price + "<br/><b>Rating:</b> " + yelpResults[numValue].rating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + yelpResults[numValue].display_phone +"</p><a href='" + yelpResults[numValue].url + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
+			var yelpImg =  "<img src='" + yelpResults[numValue].image_url + "'>";
+			var yelpData = "<h5><b>" + yelpResults[numValue].name + "</b></h5><p><b>Price:</b> " + yelpResults[numValue].price + "<br/><b>Rating:</b> " + yelpResults[numValue].rating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + yelpResults[numValue].display_phone +"</p><a href='" + yelpResults[numValue].url + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
 			// + yelpResults[i].display_phone + "</td><td>" + yelpResults[i].location.display_address + "</td><td>" + distanceMiles +"</td>";
 			// yelpDiv.append(yelpData);
-			$(".results").append(yelpData);
+			$(".img-responsive").html(yelpImg);
+			$(".results").html(yelpData);
 
 	});
 });
@@ -44,9 +46,11 @@ function Dislike() {
 			var distanceMiles = Math.round((yelpResults[numValue].distance * 0.000621371192)*100)/100;
 			console.log(yelpResults[numValue].location);
 			// var yelpDiv = $("<div class='items'>");
-			var yelpData =  "<div class='image-resize-div'><img class='thumbnail image-resize' src='" + yelpResults[numValue].image_url + "' width='300'></div><h5><b>" + yelpResults[numValue].name + "</b></h5><p><b>Price:</b> " + yelpResults[numValue].price + "<br/><b>Rating:</b> " + yelpResults[numValue].rating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + yelpResults[numValue].display_phone +"</p><a href='" + yelpResults[numValue].url + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
+			var yelpImg =  "<div class='image-resize-div'><img class='thumbnail image-resize' src='" + yelpResults[numValue].image_url + "' width='300'></div>";
+			var yelpData = "<h5><b>" + yelpResults[numValue].name + "</b></h5><p><b>Price:</b> " + yelpResults[numValue].price + "<br/><b>Rating:</b> " + yelpResults[numValue].rating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + yelpResults[numValue].display_phone +"</p><a href='" + yelpResults[numValue].url + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
 			// + yelpResults[i].display_phone + "</td><td>" + yelpResults[i].location.display_address + "</td><td>" + distanceMiles +"</td>";
 			// yelpDiv.append(yelpData);
+			$(".img-responsive").html(yelpImg);
 			$(".results").html(yelpData);
 		});
 };

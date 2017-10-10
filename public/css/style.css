@@ -17,7 +17,7 @@ img {
 }
 
 body {
-	font-size: 15px;
+	font-size: 25px;
     line-height: 1.52;
     color: #717f86;
     font-size: 16px;
@@ -721,4 +721,15 @@ Responsive media queries
 .menu-restaurant span.clearfix {
     position: relative;
     display: block;
+}
+.glyphicon {
+    font-size: 40px;
+}
+.glyphicon-thumbs-down {
+    padding-left:180px;
+    padding-top: 10px;
+}
+.img-responsive{
+    margin-top: 30px;
+    margin-bottom: -30px
 }

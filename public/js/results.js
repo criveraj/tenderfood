@@ -13,8 +13,8 @@ var currentRating = null;
 var currentYelpPhone = null;
 var currentYelpURL = null;
 
-$(document).on("click", "button.like", addToFav);
-$(document).on("click", "button.dislike", nextResult);
+$(document).on("click", ".glyphicon-thumbs-up", addToFav);
+$(document).on("click", ".glyphicon-thumbs-down", nextResult);
 
 // Yelp APi & Node.js
 // $(document).ready(function() {
@@ -46,10 +46,8 @@ function displayResults (indexPosition){
 	currentRating = aryOfYelpResults[numValue].rating;
 	currentYelpPhone = aryOfYelpResults[numValue].display_phone;
 	currentYelpURL = aryOfYelpResults[numValue].url;
-	var yelpImg =  "<div class='image-resize-div'><img class='thumbnail image-resize' src='" + currentYelpImage + "' width='800'></div>";
-	var yelpData = "<h5><b>" + currentYelpName + "</b></h5><p><b>Price:</b> " + currentYelpPrice + "<br/><b>Rating:</b> " + currentRating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + currentYelpPhone +"</p><a href='" + currentYelpURL + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
+	var yelpImg =  "<h2><b>" + currentYelpName + "</b><br><br><div><img src='" + currentYelpImage + "' width='800'></div></h4><p><b>Price:</b> " + currentYelpPrice + "<br/><b>Rating:</b> " + currentRating + "/6<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + currentYelpPhone +"</p><a href='" + currentYelpURL + "' class='button small expanded hollow yelp-link'>Yelp</a>";
 	$(".img-responsive").html(yelpImg);
-	$(".img-responsive").append(yelpData);
 }
 
 function addToFav() {

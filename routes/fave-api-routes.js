@@ -39,6 +39,7 @@ module.exports = function(app) {
 
   // Fave route for saving a new Fave
   app.post("/api/faves", function(req, res) {
+    console.log(req.body);
     db.Fave.create(req.body).then(function(dbFave) {
       res.json(dbFave);
     });

@@ -9,16 +9,16 @@ module.exports = function(sequelize, DataTypes) {
     phone: DataTypes.STRING,
     price: DataTypes.STRING
     });
-
-  Fave.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Fave.belongsTo(models.Users, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  //
+  // Fave.associate = function(models) {
+  //   // We're saying that a Post should belong to an Author
+  //   // A Post can't be created without an Author due to the foreign key constraint
+  //   Fave.belongsTo(models.Users, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Fave;
 };

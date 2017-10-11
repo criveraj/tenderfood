@@ -42,7 +42,7 @@ a{
     color: #CA226B;
 }
 a:hover, a:focus{
-    color: #5fcf80;
+    color: red
 }
 /***********************************
 Navigation bar
@@ -73,7 +73,7 @@ b, strong {
 }
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover
 {
-    color: #5FCF80;
+    color: #CA226B;
 }
 .navbar-nav .active a{
     background: none !important;

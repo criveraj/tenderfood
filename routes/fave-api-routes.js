@@ -13,59 +13,32 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the Faves
+  // GET route for getting all of the todos
   app.get("/api/faves", function(req, res) {
-    var query = {};
-    if (req.query.User_id) {
-      query.UserId = req.query.User_id;
-    }
-    db.Fave.findAll({
-      where: query
-    }).then(function(dbFave) {
+    // findAll returns all entries for a table when used with no options
+    db.Fave.findAll({}).then(function(dbFave) {
+      // We have access to the todos as an argument inside of the callback function
       res.json(dbFave);
     });
   });
 
-  // Get rotue for retrieving a single Fave
-  app.get("/api/faves/:id", function(req, res) {
-    db.Fave.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbFave) {
-      console.log(dbFave);
-      res.json(dbFave);
-    });
-  });
+
 
   // Fave route for saving a new Fave
   app.post("/api/faves", function(req, res) {
-    console.log(req.body);
     db.Fave.create(req.body).then(function(dbFave) {
       res.json(dbFave);
     });
   });
 
   // DELETE route for deleting Faves
-  app.delete("/api/faves/:id", function(req, res) {
-    db.Fave.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbFave) {
-      res.json(dbFave);
-    });
-  });
-
-  // PUT route for updating Faves
-  app.put("/api/faves", function(req, res) {
-    db.Fave.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbFave) {
-        res.json(dbFave);
-      });
-  });
+  // app.delete("/api/faves/:id", function(req, res) {
+  //   db.Fave.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbFave) {
+  //     res.json(dbFave);
+  //   });
+  // });
 };

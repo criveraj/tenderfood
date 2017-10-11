@@ -1,141 +1,65 @@
 $(document).ready(function() {
-  /* global moment */
-
-  // blogContainer holds all of our posts
-  var blogContainer = $(".blog-container");
-  var postCategorySelect = $("#category");
-  // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handlePostDelete);
-  $(document).on("click", "button.edit", handlePostEdit);
-  // Variable to hold our posts
-  var posts;
-
-  // The code below handles the case where we want to get blog posts for a specific user
-  // Looks for a query param in the url for user_id
-  var url = window.location.search;
-  var userId;
-  if (url.indexOf("?user_id=") !== -1) {
-    userId = url.split("=")[1];
-    getPosts(userId);
-  }
-  // If there's no userId we just get all posts as usual
-  else {
-    getPosts();
-  }
+  // Our new todos will go inside the todoContainer
+  var $todoContainer = $(".myFavorites");
+  // Adding event listeners for deleting, editing, and adding todos
+  $(document).on("click", ".glyphicon-thumbs-up", getFaves);
 
 
-  // This function grabs posts from the database and updates the view
-  function getPosts(user) {
-    userId = user || "";
-    if (userId) {
-      userId = "/?user_id=" + userId;
-    }
-    $.get("/api/posts" + userId, function(data) {
-      console.log("Posts", data);
-      posts = data;
-      if (!posts || !posts.length) {
-        displayEmpty(user);
-      }
-      else {
-        initializeRows();
-      }
-    });
-  }
+  // Our initial todos array
+  var faves = [];
 
-  // This function does an API call to delete posts
-  function deletePost(id) {
-    $.ajax({
-      method: "DELETE",
-      url: "/api/posts/" + id
-    })
-    .done(function() {
-      getPosts(postCategorySelect.val());
-    });
-  }
 
-  // InitializeRows handles appending all of our constructed post HTML inside blogContainer
+  // This function resets the todos displayed with new todos from the database
   function initializeRows() {
-    blogContainer.empty();
-    var postsToAdd = [];
-    for (var i = 0; i < posts.length; i++) {
-      postsToAdd.push(createNewRow(posts[i]));
+    // $todoContainer.empty();
+    var rowsToAdd = [];
+    for (var i = 0; i < faves.length; i++) {
+      rowsToAdd.push(createNewRow(faves[i]));
     }
-    blogContainer.append(postsToAdd);
+    $todoContainer.html(rowsToAdd);
   }
 
-  // This function constructs a post's HTML
-  function createNewRow(post) {
-    var formattedDate = new Date(post.createdAt);
-    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-    var newPostPanel = $("<div>");
-    newPostPanel.addClass("panel panel-default");
-    var newPostPanelHeading = $("<div>");
-    newPostPanelHeading.addClass("panel-heading");
-    var deleteBtn = $("<button>");
-    deleteBtn.text("x");
-    deleteBtn.addClass("delete btn btn-danger");
-    var editBtn = $("<button>");
-    editBtn.text("EDIT");
-    editBtn.addClass("edit btn btn-info");
-    var newPostTitle = $("<h2>");
-    var newPostDate = $("<small>");
-    var newPostUser = $("<h5>");
-    newPostUser.text("Written by: User name display is in next activity when we learn joins!");
-    newPostUser.css({
-      float: "right",
-      color: "blue",
-      "margin-top":
-      "-10px"
+  // This function grabs todos from the database and updates the view
+  function getFaves() {
+    $.get("/api/faves", function(data) {
+      faves = data;
+      console.log(faves);
+      initializeRows();
     });
-    var newPostPanelBody = $("<div>");
-    newPostPanelBody.addClass("panel-body");
-    var newPostBody = $("<p>");
-    newPostTitle.text(post.title + " ");
-    newPostBody.text(post.body);
-    newPostDate.text(formattedDate);
-    newPostTitle.append(newPostDate);
-    newPostPanelHeading.append(deleteBtn);
-    newPostPanelHeading.append(editBtn);
-    newPostPanelHeading.append(newPostTitle);
-    newPostPanelHeading.append(newPostUser);
-    newPostPanelBody.append(newPostBody);
-    newPostPanel.append(newPostPanelHeading);
-    newPostPanel.append(newPostPanelBody);
-    newPostPanel.data("post", post);
-    return newPostPanel;
   }
 
-  // This function figures out which post we want to delete and then calls deletePost
-  function handlePostDelete() {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-    deletePost(currentPost.id);
-  }
+  // This function constructs a todo-item row
+  function createNewRow(fave) {
+    var $newInputRow = $(
+      [
+        "<li class='list-group-item todo-item'>",
+        "<span>",
+        fave.name,
+        "</span>",
+        "<input type='text' class='edit' style='display: none;'>",
+        "<button class='delete btn btn-default'>x</button>",
+        "<button class='complete btn btn-default'>✓</button>",
+        "</li>"
+      ].join("")
+    );
 
-  // This function figures out which post we want to edit and takes it to the appropriate url
-  function handlePostEdit() {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-    window.location.href = "/cms?post_id=" + currentPost.id;
-  }
-
-  // This function displays a messgae when there are no posts
-  function displayEmpty(id) {
-    var query = window.location.search;
-    var partial = "";
-    if (id) {
-      partial = " for User #" + id;
+    $newInputRow.find("button.delete").data("id", fave.id);
+    $newInputRow.find("input.edit").css("display", "none");
+    $newInputRow.data("todo", fave);
+    if (fave.complete) {
+      $newInputRow.find("span").css("text-decoration", "line-through");
     }
-    blogContainer.empty();
-    var messageh2 = $("<h2>");
-    messageh2.css({ "text-align": "center", "margin-top": "50px" });
-    messageh2.html("No posts yet" + partial + ", navigate <a href='/cms" + query +
-    "'>here</a> in order to get started.");
-    blogContainer.append(messageh2);
+    return $newInputRow;
   }
+
+  // // This function deletes a todo when the user clicks the delete button
+  // function deleteTodo(event) {
+  //   event.stopPropagation();
+  //   var id = $(this).data("id");
+  //   $.ajax({
+  //     method: "DELETE",
+  //     url: "/api/todos/" + id
+  //   }).done(getTodos);
+  // }
 
 });

@@ -27,17 +27,42 @@
           <span class="icon-bar"></span>
         </button>
         <a style="font-family: 'Lobster', cursive;
- font-size: 40px;">Tender Foods</a>
+ font-size: 40px; font-style: italic">Tender Foods</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#pricing">Favorites</a></li>
-          <li><a href="#" data-target="#login" data-toggle="modal">User Name</a></li>
+          <li><a href="#" data-target="#favorites" data-toggle="modal">Favorites</a></li>
+          <li><a href="#" data-target="#login" data-toggle="modal" class="show-faves">User Name</a></li>
         </ul>
         </div>
       </div>
     </nav>
     <!--/ Navigation bar-->
+
+    <!--Modal box-->
+    <div class="modal fade" id="favorites" role="dialog">
+      <div class="modal-dialog modal-sm">
+
+        <!-- Modal content no 1-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title text-center form-title">Favorites</h4>
+          </div>
+          <div class="modal-body padtrbl">
+
+            <div class="login-box-body">
+              <p class="login-box-msg">What choice are you going with?</p>
+              <div class="myFavorites">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">
       <div class="modal-dialog modal-sm">
@@ -192,5 +217,6 @@ marker.setMap(map);
     <script src="jsstyle/jquery.easing.min.js"></script>
     <script src="jsstyle/bootstrap.min.js"></script>
     <script src="js/results.js" type="text/javascript"></script>
+    <script src="js/fave.js" type="text/javascript"></script>
 </body>
 </html>

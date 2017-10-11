@@ -13,7 +13,7 @@ var session = require('express-session');
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 7080;
 
 // Requiring our models for syncing
 var db = require("./models");

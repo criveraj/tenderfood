@@ -14,14 +14,14 @@ app.get('/signin', function(req,res){
 
     });
 
-app.post('/signup', passport.authenticate('local-signup',  { successRedirect: '/',
+app.post('/signup', passport.authenticate('local-signup',  { successRedirect: '/results',
                                                     failureRedirect: '/'}
                                                     ));
 
 
 app.get('/',isLoggedIn, function(req,res){
     
-        res.render('index.html'); 
+        res.render('results.html'); 
     
     });
 
@@ -35,7 +35,7 @@ app.get('/logout',function(req,res){
     });
 
 
-app.post('/signin', passport.authenticate('local-signin',  { successRedirect: '/',
+app.post('/signin', passport.authenticate('local-signin',  { successRedirect: '/results',
                                                     failureRedirect: '/'}
                                                     ));
 

@@ -10,6 +10,13 @@
     background-color: white;
     text-align: center;
 }
+#map {
+
+      width: 65%;
+      height: 400px;
+
+}
+
 img {
     text-align: center;
 }

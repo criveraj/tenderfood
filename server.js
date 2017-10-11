@@ -8,12 +8,17 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var passport = require('passport');
 var session = require('express-session');
+var bodyParser = require('body-parser');
+var env        = require('dotenv').load();
 
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+// Static directory
+app.use(express.static(__dirname + '/public'));
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -27,12 +32,14 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Causing issues with localization
 
-// app.use(session({ secret: 'tendr',resave: true, saveUninitialized:true})); // session secret
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({ secret: 'tender food',resave: true, saveUninitialized:true})); // session secret
+    app.use(passport.initialize());
+    app.use(passport.session()); // persistent login sessions
 
-// Static directory
-app.use(express.static("public"));
+
+//load &routes to passport strategies
+require('./routes/auth.js')(app,passport);
+require('./config/passport/passport.js')(passport,db.user);
 
 // Routes
 // =============================================================

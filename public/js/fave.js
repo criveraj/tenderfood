@@ -3,7 +3,11 @@ $(document).ready(function() {
   var $todoContainer = $(".myFavorites");
   // Adding event listeners for deleting, editing, and adding todos
   $(document).on("click", ".glyphicon-heart", getFaves);
-
+  $(document).keydown(function(e) {
+    if(e.keyCode == 37) { // left
+      getFaves();
+    }
+  });
 
   // Our initial todos array
   var faves = [];

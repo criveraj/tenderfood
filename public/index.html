@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -24,13 +23,13 @@
           <span class="icon-bar"></span>
         </button>
         <a href="/" style="font-family: 'Lobster', cursive;
- font-size: 40px;">Tender Foods</a>
+        font-size: 40px; font-style: italic">Tender <span style= "font-size: 30px" class= "glyphicon glyphicon-cutlery" aria-hidden="true"></span></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#feature">About Us</a></li>
-          <li><a href="/results">Favorites</a></li>
-          <li><a href="#" data-target="#login" data-toggle="modal">Login</a></li>
+
+          <li><a href="/results">Login</a></li>
           <li><a href="#" data-target="#signup" data-toggle="modal">Sign Up</a></li>
         </ul>
         </div>
@@ -102,19 +101,19 @@
 
                       <input class="form-control" placeholder="Email"  id="signupemail" type="text" autocomplete="off" />
             <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
-                      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                      <!-- <span class="glyphicon glyphicon-envelope form-control-feedback"></span> -->
                   </div>
                              <div class="form-group has-feedback"> <!----- username -------------->
 
                       <input class="form-control" placeholder="Username"  id="loginid" type="text" autocomplete="off" />
             <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
-                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                      <!-- <span class="glyphicon glyphicon-user form-control-feedback"></span> -->
                   </div>
 
                   <div class="form-group has-feedback"><!----- password -------------->
                       <input class="form-control" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
             <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span><!---Alredy exists  ! -->
-                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                      <!-- <span class="glyphicon glyphicon-lock form-control-feedback"></span> -->
                   </div>
                   <div class="row">
                       <div class="col-xs-12">
@@ -183,15 +182,18 @@
       <div class="container">
         <div class="row">
           <div class="header-section text-center">
-            <h2>LET'S BEGIN</h2>
+            <a href="/results" style="font-family: 'Lobster', cursive;
+            font-size: 40px;">Let's Begin</a>
             <p style = "font-size:28px">Let your fingers do the work and your mouth do the rest!<br></p>
             <hr class="bottom-line">
           </div>
           <div class="feature-info">
             <div class="fea">
               <div class="col-md-4">
+                <center>
                 <div class="heading pull-right">
-                  <h4>SWIPE</h4>
+                  <c style="font-family: 'Lobster', cursive;
+                  font-size: 40px;">SWIPE</c>
                   <p>It's easy as apple pie! Swipe left to add to your favorites and swipe right to throw that food in the trash!</p>
                 </div>
                 <div class="fea-img pull-left">
@@ -201,8 +203,10 @@
             </div>
             <div class="fea">
               <div class="col-md-4">
+                <center>
                 <div class="heading pull-right">
-                  <h4>SELECT</h4>
+                  <c style="font-family: 'Lobster', cursive;
+                  font-size: 40px; ">SELECT</c>
                   <p>Once you select your top choices, you're on your way to flavor town.</p>
                 </div>
 
@@ -211,8 +215,10 @@
             </div>
             <div class="fea">
               <div class="col-md-4">
+                <center>
                 <div class="heading pull-right">
-                  <h4>EAT</h4>
+                  <c style="font-family: 'Lobster', cursive;
+                  font-size: 40px; ">EAT</c>
                   <p> Find great local spots for your favorite eats. We all eat with our eyes, so select your favorite meal and lets get eating!</p>
                 </div>
                 <div class="fea-img pull-left">
@@ -242,9 +248,9 @@
     </div>
     <!--/ Footer-->
 
-    <script src="jsstyle/jquery.min.js"></script>
-    <script src="jsstyle/jquery.easing.min.js"></script>
-    <script src="jsstyle/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 
   </body>

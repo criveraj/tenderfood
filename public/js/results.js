@@ -16,6 +16,15 @@ var currentYelpURL = null;
 $(document).on("click", ".glyphicon-heart", addToFav);
 $(document).on("click", ".glyphicon-remove", nextResult);
 
+$(document).keydown(function(e) {
+  if(e.keyCode == 37) { // left
+    addToFav();
+  }
+  else if(e.keyCode == 39) { // right
+    nextResult();
+  }
+});
+
 // Yelp APi & Node.js
 // $(document).ready(function() {
 var yelpAPIFunction = function(address) {

@@ -125,9 +125,9 @@
 
 
 
-  <div id="myMap"></div>
+  <div id="map"></div>
 
-
+<!-- 
   <script>
     // Note: This example requires that you consent to location sharing when
     // prompted by your browser. If you see the error "The Geolocation service
@@ -155,8 +155,8 @@
           };
 
 
-          // infoWindow.setPosition(pos);
-          // infoWindow.setContent('Location found.');
+           infoWindow.setPosition(pos);
+           infoWindow.setContent('Location found.');
 
           var marker = new google.maps.Marker({
             position: pos,
@@ -217,8 +217,10 @@
       marker.setMap(map);
 
     }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpQYMTkzkXXHkS3q-fKtz0b1bLHq4QIMc&callback=initMap">
+  </script> -->
+
+  <script async defer 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpQYMTkzkXXHkS3q-fKtz0b1bLHq4QIMc&callback=initMap">
   </script>
 
 

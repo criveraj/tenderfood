@@ -32,23 +32,29 @@ $(document).ready(function() {
   function createNewRow(fave) {
     var $newInputRow = $(
       [
-        "<li class='list-group-item todo-item'>",
-        "<span>",
+        "<ul class='list-group-item todo-item'><center>",
+        "<span><center>",
         fave.name,
+        " - ",
+        fave.price,
+        "<p>",
+        fave.address,
+        "<p><img src='",
+        fave.img,
+        "' width='200' href='",
+        fave.url,
+        "'>",
         "</span>",
-        "<input type='text' class='edit' style='display: none;'>",
-        "<button class='delete btn btn-default'>x</button>",
-        "<button class='complete btn btn-default'>✓</button>",
-        "</li>"
+
+        // "<button class='delete btn btn-default'>x</button>",
+        "</ul>"
       ].join("")
     );
 
-    $newInputRow.find("button.delete").data("id", fave.id);
-    $newInputRow.find("input.edit").css("display", "none");
-    $newInputRow.data("todo", fave);
-    if (fave.complete) {
-      $newInputRow.find("span").css("text-decoration", "line-through");
-    }
+    // $newInputRow.find("button.delete").data("id", fave.id);
+
+    $newInputRow.data("fave", fave);
+
     return $newInputRow;
   }
 

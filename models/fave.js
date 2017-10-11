@@ -4,10 +4,12 @@ module.exports = function(sequelize, DataTypes) {
   var Fave = sequelize.define("Fave", {
     img: DataTypes.STRING,
     name: DataTypes.STRING,
-    distance: DataTypes.STRING,
+    address: DataTypes.STRING,
+    // citeStateZip: DataTypes.STRING
     rating: DataTypes.STRING,
     phone: DataTypes.STRING,
-    price: DataTypes.STRING
+    price: DataTypes.STRING,
+    url: DataTypes.STRING
     });
   //
   // Fave.associate = function(models) {

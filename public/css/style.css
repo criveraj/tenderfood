@@ -6,42 +6,37 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
 */
-
-
-
 .jumbotron {
     text-align: center;
 }
 img {
     text-align: center;
 }
-
 body {
-	font-size: 25px;
+    font-size: 25px;
     line-height: 1.52;
     color: #717f86;
     font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 .section-padding{
-	padding: 60px 0px;
+    padding: 60px 0px;
 }
 h1, h2, h3, h4, h5, h6{
     font-family: Open Sans, sans-serif;
@@ -49,7 +44,7 @@ h1, h2, h3, h4, h5, h6{
     color: #4B4B4C;
 }
 a{
-    color: #5fcf80;
+    color: #00007F;
 }
 a:hover, a:focus{
     color: #5fcf80;
@@ -72,31 +67,29 @@ Navigation bar
     font-weight: 700;
 }
 .navbar-nav > li > a{
-	padding: 0px;
-	margin: 10px 5px;
-	padding: 10px 15px;
+    padding: 0px;
+    margin: 10px 5px;
+    padding: 10px 15px;
 }
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover
 {
-	color: #5FCF80;
+    color: #5FCF80;
 }
-
 .navbar-nav .active a{
     background: none !important;
     color: #5FCF80 !important;
     outline: none;
 }
-
 .btn-trial a{
-	background-color: #5FCF80;
-	border-radius: 25px;
-	color: #ffffff !important;
-	border: 1px solid #5FCF80;
+    background-color: #5FCF80;
+    border-radius: 25px;
+    color: #ffffff !important;
+    border: 1px solid #5FCF80;
 }
 .btn-trial a:hover, .btn-trial a:focus{
-	border: 1px solid #5FCF80;
-	background-color: #fff;
-	color: #5FCF80 !important;
+    border: 1px solid #5FCF80;
+    background-color: #fff;
+    color: #5FCF80 !important;
 }
 .navbar-default .navbar-brand {
     font-family: 'Dosis', sans-serif !important;
@@ -108,47 +101,47 @@ Navigation bar
     margin: 20px 0px;
 }
 .navbar-default .navbar-brand span{
-	font-weight: 100 !important;
+    font-weight: 100 !important;
 }
 .navbar {
     margin-bottom: 0px;
 }
 .padding-zero{
-	padding: 0px;
+    padding: 0px;
 }
 .mart20{
-	margin-top: 20px;
+    margin-top: 20px;
 }
 /***********************************
 Banner
 ************************************/
 .banner{
-	background: url('../img/bg-banner.jpg') no-repeat center top;
+    background: url('../img/bg-banner.jpg') no-repeat center top;
     background-size: cover;
-	min-height: 580px;
+    min-height: 580px;
     position: relative;
 }
 .bg-color{
-	background-color: RGBA(12, 11, 11, 0.82);
-	min-height: 580px;
+    background-color: RGBA(12, 11, 11, 0.82);
+    min-height: 580px;
 }
 .text-dec{
-	font-size: 24px;
-	padding: 10px 20px;
+    font-size: 24px;
+    padding: 10px 20px;
     margin: 15px 0;
-	text-transform: uppercase;
+    text-transform: uppercase;
     color: #fff;
 }
 .text-border{
-	border: 5px solid #5FCF80;
-	display: inline-block;
-	margin-top: 150px;
+    border: 5px solid #5FCF80;
+    display: inline-block;
+    margin-top: 150px;
 }
 .intro-para{
-	font-family: 'Alegreya Sans', sans-serif;
-	font-size: 45px;
-	color: #fff;
-	margin-top: 30px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 45px;
+    color: #fff;
+    margin-top: 30px;
 }
 .quote .btn{
     background-color:
@@ -199,7 +192,6 @@ Banner
     top:10px;
     margin-left: -2.5px;
     transition:all 0.3s ease-in;
-
      -webkit-animation-name: rotateplane; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
     animation-name: rotateplane;
@@ -251,22 +243,22 @@ Banner
 Features
 ************************************/
 h2{
-	font-size: 24px;
-	padding-bottom: 15px;
+    font-size: 40px;
+    padding-bottom: 15px;
 }
 .bottom-line{
-	width: 25px;
-	height: 3px;
-	background-color: rgb(99, 122, 145);
+    width: 25px;
+    height: 3px;
+    background-color: rgb(99, 122, 145);
 }
 .fea{
-	margin-top: 25px;
+    margin-top: 25px;
 }
 .fea-img {
   width: 20%;
 }
 .heading {
-    width: 80%;
+    width: 96%;
 }
 .fea i {
     font-size: 39px;
@@ -274,12 +266,13 @@ h2{
     margin-top: 7px;
 }
 .heading h4 {
-    font-size: 17px;
+    font-size: 25px;
     line-height: 1.25;
     font-weight: 700;
     color: #000;
     margin: 10px 0px;
-    text-align: left;
+    margin-left:-30px;
+    text-align: center;
 }
 .heading p {
   text-align: left;
@@ -512,9 +505,8 @@ Contact Us
     background: #fafafa;
     border: 1px solid rgba(119, 81, 81, 0.34);
     width: 100%;
-	margin-bottom: 15px;
+    margin-bottom: 15px;
     border-radius: 0;
-
 }
 .textarea {
     height: 228px;
@@ -527,7 +519,6 @@ Contact Us
 .white{
     color: #fff !important;
 }
-
 .validation {
     color: red;
     display:none;
@@ -535,7 +526,6 @@ Contact Us
     font-weight:400;
     font-size:13px;
 }
-
 #sendmessage {
     color: green;
     border:1px solid green;
@@ -545,7 +535,6 @@ Contact Us
     font-weight:600;
     margin-bottom:15px;
 }
-
 #errormessage {
     color: red;
     display:none;
@@ -555,22 +544,19 @@ Contact Us
     font-weight:600;
     margin-bottom:15px;
 }
-
 #sendmessage.show, #errormessage.show, .show {
-	display:block;
+    display:block;
 }
 /***********************************
 Footer
 ************************************/
 footer {
-      background-color:gray;
-      color: #000000;
+      background-color: lightgrey;
+      color: #f5f5f5;
       padding: 32px;
       margin-bottom: 0px;
       bottom: 0;
 }
-
-
 /***********************************
 ************************************
 Responsive media queries
@@ -597,7 +583,6 @@ Responsive media queries
     .service-box, .feature-info{
         margin-bottom: 30px;
     }
-
     .pricing-head .amount {
     font-size: 51px;
     }
@@ -675,15 +660,11 @@ Responsive media queries
     }
     .navbar-search .input-prepend {
   margin-bottom: 0;
-
 }
-
-
 }
 #googleMap {
       width: 100%;
       height: 400px;
-
 }
 .menu-restaurant{
     width: 50%;

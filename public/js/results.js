@@ -13,8 +13,8 @@ var currentRating = null;
 var currentYelpPhone = null;
 var currentYelpURL = null;
 
-$(document).on("click", ".glyphicon-thumbs-up", addToFav);
-$(document).on("click", ".glyphicon-thumbs-down", nextResult);
+$(document).on("click", ".glyphicon-heart", addToFav);
+$(document).on("click", ".glyphicon-remove", nextResult);
 
 // Yelp APi & Node.js
 // $(document).ready(function() {
@@ -46,7 +46,7 @@ function displayResults(indexPosition) {
   currentRating = aryOfYelpResults[numValue].rating;
   currentYelpPhone = aryOfYelpResults[numValue].display_phone;
   currentYelpURL = aryOfYelpResults[numValue].url;
-  var yelpImg = "<h2><b>" + currentYelpName + "</b><br><br><div><img src='" + currentYelpImage + "' width='800'></div></h4><p><b>Price:</b> " + currentYelpPrice + "<br/><b>Rating:</b> " + currentRating + "/6<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + currentYelpPhone + "</p><a href='" + currentYelpURL + "' class='button medium'>More info</a>";
+  var yelpImg = "<h2><b>" + currentYelpName + "</b><br><br><div><img src='" + currentYelpImage + "' width='100%'></div></h4><p><b>Price:</b> " + currentYelpPrice + "<br/><b>Rating:</b> " + currentRating + "/6<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + currentYelpPhone + "</p><a href='" + currentYelpURL + "' class='button medium'>More info</a>";
   $(".img-responsive").html(yelpImg);
 	lat = aryOfYelpResults[numValue].coordinates.latitude;
 	lng = aryOfYelpResults[numValue].coordinates.longitude;

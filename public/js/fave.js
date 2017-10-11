@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Our new todos will go inside the todoContainer
   var $todoContainer = $(".myFavorites");
   // Adding event listeners for deleting, editing, and adding todos
-  $(document).on("click", ".glyphicon-thumbs-up", getFaves);
+  $(document).on("click", ".glyphicon-heart", getFaves);
 
 
   // Our initial todos array

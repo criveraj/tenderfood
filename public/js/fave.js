@@ -42,7 +42,7 @@ $(document).ready(function() {
         " - ",
         fave.price,
         "<p>",
-        "<a href='",
+        "<a target='_blank' href='",
         fave.url,
         "'><img src='",
         fave.img,

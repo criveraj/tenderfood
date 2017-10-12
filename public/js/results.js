@@ -53,10 +53,10 @@ function displayResults(indexPosition) {
   currentYelpImage = aryOfYelpResults[numValue].image_url;
   currentYelpName = aryOfYelpResults[numValue].name;
   currentYelpPrice = aryOfYelpResults[numValue].price;
-  currentRating = aryOfYelpResults[numValue].rating;
+  currentYelpRating = aryOfYelpResults[numValue].rating;
   currentYelpPhone = aryOfYelpResults[numValue].display_phone;
   currentYelpURL = aryOfYelpResults[numValue].url;
-  var yelpImg = "<h2><b>" + currentYelpName + "</b><br><br><div><img src='" + currentYelpImage + "' width='80%'></div></h4><p><b>Price:</b> " + currentYelpPrice + "<br/><b>Rating:</b> " + currentRating + "/6<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + currentYelpPhone + "</p><a href='" + currentYelpURL + "' class='button medium'>More info</a>";
+  var yelpImg = "<h2><b>" + currentYelpName + "</b><br><br><div><img src='" + currentYelpImage + "' width='80%'></div></h4><p><b>Price:</b> " + currentYelpPrice + "<br/><b>Rating:</b> " + currentYelpRating + "/6<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + currentYelpPhone + "</p><a href='" + currentYelpURL + "' class='button medium'>More info</a>";
   $(".img-responsive").html(yelpImg);
 	lat = aryOfYelpResults[numValue].coordinates.latitude;
 	lng = aryOfYelpResults[numValue].coordinates.longitude;
@@ -70,7 +70,7 @@ function addToFav() {
   currentYelpImage = aryOfYelpResults[numValue].image_url;
   currentYelpName = aryOfYelpResults[numValue].name;
   currentYelpPrice = aryOfYelpResults[numValue].price;
-  currentRating = aryOfYelpResults[numValue].rating;
+  currentYelpRating = aryOfYelpResults[numValue].rating;
   currentYelpPhone = aryOfYelpResults[numValue].display_phone;
   currentYelpURL = aryOfYelpResults[numValue].url;
 
@@ -80,7 +80,7 @@ function addToFav() {
     name: currentYelpName,
     address: currentYelpAddr.display_address[0],
     // citeStateZip: currentYelpAddr.display_address,
-    rating: currentRating,
+    rating: currentYelpRating,
     phone: currentYelpPhone,
     price: currentYelpPrice,
     url: currentYelpURL

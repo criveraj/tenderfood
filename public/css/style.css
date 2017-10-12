@@ -713,10 +713,31 @@ Responsive media queries
 .glyphicon {
     font-size: 70px;
     color: #CA226B;
+
 }
 .btn-lg {
     margin: 50px 50px 25px 50px;
 }
 .img-responsive{
     margin-bottom: -30px
+}
+.glyphicon-shopping-cart {
+  font-size: 30px;
+  color: gray;
+}
+.glyphicon-road {
+  padding: 0px 60px;
+  font-size: 30px;
+  color: gray;
+}
+.glyphicon-earphone {
+  font-size: 30px;
+  color: gray;
+}
+.glyphicon-lock {
+  font-size: 15px;
+}
+
+.glyphicon-user {
+  font-size: 15px;
 }
